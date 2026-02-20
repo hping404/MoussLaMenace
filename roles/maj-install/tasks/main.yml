@@ -1,0 +1,19 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Mettre à jour les paquets
+  ansible.builtin.package:
+    update_cache: true
+
+- name: Installer git
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  when: ansible_facts['os_family'] == "RedHat"
+  loop: "{{ packages }}"
+
+- name: Installer nodejs
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
+  loop: "{{ packages }}"

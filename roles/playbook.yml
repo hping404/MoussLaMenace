@@ -1,0 +1,8 @@
+- name: Playbook avec roles construction application
+  hosts: all
+  become: yes
+  roles:
+    - maj-install
+    - clone-git
+    - build
+    - start

@@ -1,0 +1,14 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Installer les dépendances npm
+  ansible.builtin.command: npm install
+  args:
+    chdir: "{{ dest }}"
+
+- name: Construire le projet
+  ansible.builtin.command: npm run build
+  args:
+    chdir: "{{ dest }}"
+
+- name: Installer serve globalement
+  ansible.builtin.command: npm install -g serve

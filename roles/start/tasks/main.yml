@@ -1,0 +1,8 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Démarrer le serveur
+  ansible.builtin.command: serve -s dist
+  args:
+    chdir: "{{ dest }}"
+  async: 3600
+  poll: 0

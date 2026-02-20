@@ -1,0 +1,4 @@
+#SPDX-License-Identifier: MIT-0
+---
+repo: https://gitlab.com/ftutorials-labs/quiz-ansible.git
+dest: /quiz-ansible
